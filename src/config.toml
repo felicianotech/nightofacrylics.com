@@ -1,0 +1,26 @@
+baseURL = "http://NightOfAcrylics.com"
+languageCode = "en-us"
+title = "Night of Acrylics"
+
+theme = "hugo-theme-lean-launch-page"
+googleAnalytics = "UA-108010770-1"
+
+enableEmoji = true
+canonifyurls = true
+paginate = 3
+
+[params]
+description = ""
+tagline = "Have fun, Paint fun."
+mailchimpURL = "//NightOfAcrylics.us16.list-manage.com/subscribe/post?u=146e75a1066df1e45e94aa5be&amp;id=2746dc535d"
+
+[blackfriday]
+	hrefTargetBlank	=	true
+
+[social]
+	twitter = ""
+
+[[menu.main]]
+	name	= "Home"
+	url		= "/"
+	weight	= -1

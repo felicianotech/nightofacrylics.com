@@ -1,0 +1,1 @@
+# Example Site [![CircleCI Build Status](https://circleci.com/gh/org/repo-name.svg?style=shield)](https://circleci.com/gh/org/repo-name) [![GitHub License](https://img.shields.io/badge/license-MIT-blue.svg)](https://raw.githubusercontent.com/org/repo-name/master/LICENSE)
