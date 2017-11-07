@@ -18,7 +18,6 @@
 {{ $directory := "themes/hugo-theme-lean-launch-page/static/" }}
 {{ $filename := "favicon.png" }}
 {{ if (where (readDir $directory) "Name" $filename) }}
-	<img class="logo" src="/favicon.png" alt="Logo" />
 {{ end }}
 	<ul class="social-icons">
 		{{ if isset .Site.Params "twitter" }}<li><a href="{{ .Site.Params.twitter }}"><i class="fa fa-twitter"></i></a></li>{{ end }}
@@ -28,7 +27,7 @@
 	</ul>
 	{{ block "main" . }}
 	{{ end }}
-	<h1>{{ .Site.Title }}</h1>
+	<h1><img class="logo" src="/assets/img/logo-dark-bg.svg" alt="{{ .Site.Title }} Logo" /></h1>
 	<p>{{ .Site.Params.tagline }}</p>
 	{{ if isset .Site.Params "mailchimpurl" }}{{ partial "mailchimp-signup" . }}{{ end }}
 	<div id="benefits">
