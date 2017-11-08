@@ -13,12 +13,12 @@ paginate = 3
 description = ""
 tagline = "Have fun, Paint fun."
 mailchimpURL = "//NightOfAcrylics.us16.list-manage.com/subscribe/post?u=146e75a1066df1e45e94aa5be&amp;id=2746dc535d"
+facebook   = "https://facebook.com/NightOfAcrylics"
+twitter    = "https://twitter.com/NightOfAcrylics"
+instagram  = "https://instagram.com/NightOfAcrylics"
 
 [blackfriday]
 	hrefTargetBlank	=	true
-
-[social]
-	twitter = ""
 
 [[menu.main]]
 	name	= "Home"
