@@ -1,0 +1,38 @@
+/* Rules without a media query present take affect when the webpage is 1,170px or
+less. */
+
+
+main{
+}
+	body.section-communities main.list .communities{
+	}
+		body.section-communities main.list .community{
+		}
+
+
+/************************************************
+ * <= 950px width
+ * *********************************************/
+@media(max-width: 950px){
+
+	main{
+	}
+		body.section-communities main.list .communities{
+		}
+			body.section-communities main.list .community{
+			}
+}
+
+
+/************************************************
+ * <= 850px width
+ * *********************************************/
+@media(max-width: 850px){
+
+	main{
+	}
+		body.section-communities main.list .communities{
+		}
+			body.section-communities main.list .community{
+			}
+}

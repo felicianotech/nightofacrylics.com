@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ $venue := first 1 (where .Site.Pages "Params.venueid" .Params.venueid) }}
+{{ $painting := first 1 (where .Site.Pages "Params.paintingid" .Params.paintingid) }}
+<main class="single">
+	<h1>{{ .Title }}</h1>
+	{{ range $painting }}
+	<img class="painting" src="/assets/img/paintings/{{ .Params.file }}" alt="The painting" />
+	{{ end }}
+	<div class="content">
+		<h2>Event Description</h2>
+		{{ .Content }}
+		<h2>Event Details</h2>
+		<ul>
+			<li>{{ range $venue }}<strong>Address:</strong> {{ .Params.address  }}{{ end }}</li>
+			<li><strong>When:</strong> {{ dateFormat "Tuesday, January 2, 2006" .Params.eventdate }}</li>
+			<li><strong>Price: {{ .Params.price }}</strong></li>
+		</ul>
+		<p class="buy-button-wrapper">
+			<select class="ticket-number">
+				<option value="1" default>1 ticket</option>
+			{{ range $index := after 1 (seq 10) }}
+				<option value="{{ $index }}">{{ $index }} tickets</option>
+			{{ end }}
+			</select>
+			<a class="buy-button button" data-product-id="{{ .Params.productid }}" href="#" target="_blank">Purchase Tickets</a>
+		</p>
+	</div>
+</main>
+{{ end }}

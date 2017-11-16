@@ -2,7 +2,7 @@ baseURL = "http://NightOfAcrylics.com"
 languageCode = "en-us"
 title = "Night of Acrylics"
 
-theme = "hugo-theme-lean-launch-page"
+theme = "noa-2017"
 googleAnalytics = "UA-108010770-1"
 
 enableEmoji = true
@@ -24,3 +24,13 @@ instagram  = "https://instagram.com/NightOfAcrylics"
 	name	= "Home"
 	url		= "/"
 	weight	= -1
+
+[[menu.main]]
+	name	= "Events"
+	url		= "/events"
+	weight	= 5
+
+[[menu.main]]
+	name	= "Newsletter"
+	url		= "/newsletter"
+	weight	= 10
