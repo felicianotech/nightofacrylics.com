@@ -11,28 +11,43 @@ main{
 
 
 /************************************************
- * <= 950px width
+ * <= 800px width
  * *********************************************/
-@media(max-width: 950px){
+@media(max-width: 800px){
+
+	body > header img{
+		width: 40%;
+	}
 
 	main{
+		width: 80%;
 	}
-		body.section-communities main.list .communities{
+
+	body.section-communities main.list .communities{
+	}
+		body.section-communities main.list .community{
 		}
-			body.section-communities main.list .community{
-			}
 }
 
 
 /************************************************
- * <= 850px width
+ * <= 600px width
  * *********************************************/
-@media(max-width: 850px){
+@media(max-width: 600px){
+
+	body{
+		font-size: 1.2rem;
+	}
 
 	main{
+		width: 95%;
 	}
-		body.section-communities main.list .communities{
+
+	body.section-events main.list img.painting{
+		display: block;
+		float: none;
+		width: 100%;
+	}
+		body.section-communities main.list .community{
 		}
-			body.section-communities main.list .community{
-			}
 }
