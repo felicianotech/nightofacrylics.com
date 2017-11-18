@@ -13,8 +13,10 @@
 		<ul>
 			<li>{{ range $venue }}<strong>Address:</strong> {{ .Params.address  }}{{ end }}</li>
 			<li><strong>When:</strong> {{ dateFormat "Tuesday, January 2, 2006" .Params.eventdate }}</li>
+			<li><strong>Time:</strong> {{ dateFormat "3:04 PM" .Params.eventdate }}</li>
 			<li><strong>Price: {{ .Params.price }}</strong></li>
 		</ul>
+		<p>Please note that our events and tickets are for adults 18 and over. All people in your party consuming alcoholic beverages must be the legal drinking age of 21 and above with the proper ID. Attendees assume all responsiblilites for those drinking alcohol in their party.</p>
 		<p class="buy-button-wrapper">
 			<select class="ticket-number">
 				<option value="1" default>1 ticket</option>
