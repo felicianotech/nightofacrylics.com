@@ -1,9 +1,9 @@
 {{ define "main" }}
 <main class="list">
 	<h1>{{ .Title }}</h1>
-	{{ range .Data.Pages }}
-	{{ $venue := first 1 (where $.Site.Pages "Params.venueid" .Params.venueid) }}
-	{{ $painting := first 1 (where $.Site.Pages "Params.paintingid" .Params.paintingid) }}
+	{{ range sort .Data.Pages ".Params.eventdate" }}
+	{{ $venue := where (where $.Site.Pages "Section" "venues") "Params.venueid" .Params.venueid }}
+	{{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
 		<div class="content-item event">
 		{{ range $painting }}
 			<img class="painting" src="/assets/img/paintings/{{ .Params.file }}" alt="The painting" />
