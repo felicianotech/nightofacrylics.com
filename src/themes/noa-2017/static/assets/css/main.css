@@ -157,6 +157,7 @@ body.section-events main.list{
 }
 	body.section-events .event{
 		margin-bottom: 35px;
+		overflow: auto;
 	}
 
 	body.section-events main.list a{
