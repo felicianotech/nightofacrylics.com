@@ -155,6 +155,10 @@ body.home{
 body.section-events main.list{
 	overflow:  auto;
 }
+	body.section-events .event{
+		margin-bottom: 35px;
+	}
+
 	body.section-events main.list a{
 		text-decoration: none;
 	}
@@ -166,7 +170,12 @@ body.section-events main.list{
 	}
 
 	body.section-events main.list h2{
+		margin: 0;
 		text-align: left;
+	}
+
+	body.section-events main.list ul{
+		margin-top: 0px;
 	}
 
 	body.section-events main.list li{
