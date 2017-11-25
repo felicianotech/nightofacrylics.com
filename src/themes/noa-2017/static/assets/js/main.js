@@ -11,7 +11,18 @@ function checkout( productID ){
 	});
 }
 
-$(document).ready(function(){
+function checkout2( productID ){
+
+	shopClient.fetchProduct( productID ).then( function( product ){
+		
+		var variant = product.variants[0];
+		var quantity = $( ".ticket-number" ).val();
+
+		$( ".buy-button" ).attr( "href", variant.checkoutUrl( quantity ));
+	}).catch( function(){
+		console.log('Request failed');
+	});
+}
 
 	shopClient = ShopifyBuy.buildClient({
 		accessToken: "f1bc486a26c2f3223539bf3154543bda",
@@ -19,12 +30,19 @@ $(document).ready(function(){
 		appId: "6"
 	});
 
-	$( ".buy-button" ).click( function( event ){
+$(document).ready(function(){
 
-		event.preventDefault();
 
-		checkout( $( this ).attr( "data-product-id" ));
-	})
+	//$( ".buy-button" ).click( function( event ){
+
+	//	event.preventDefault();
+
+	//	checkout( $( this ).attr( "data-product-id" ));
+	//});
+
+	//$( ".buy-button" ).attr( "href", checkout2( $( this ).attr( "data-product-id" )));
+	//$( ".buy-button" ).attr( "href", checkout2( $( this ).attr( "data-product-id" )));
+	checkout2( $( ".buy-button" ).attr( "data-product-id" ) );
 });
 
 // globals
