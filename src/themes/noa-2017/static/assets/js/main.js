@@ -43,6 +43,10 @@ $(document).ready(function(){
 	//$( ".buy-button" ).attr( "href", checkout2( $( this ).attr( "data-product-id" )));
 	//$( ".buy-button" ).attr( "href", checkout2( $( this ).attr( "data-product-id" )));
 	checkout2( $( ".buy-button" ).attr( "data-product-id" ) );
+
+	$( ".ticket-number" ).change( function( event ){
+		checkout2( $( ".buy-button" ).attr( "data-product-id" ) );
+	});
 });
 
 // globals
