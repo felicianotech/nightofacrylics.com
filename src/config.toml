@@ -17,6 +17,9 @@ facebook   = "https://facebook.com/NightOfAcrylics"
 twitter    = "https://twitter.com/NightOfAcrylics"
 instagram  = "https://instagram.com/NightOfAcrylics"
 
+[Social]
+	twitter = "NightOfAcrylics"
+
 [blackfriday]
 	hrefTargetBlank	=	true
 
