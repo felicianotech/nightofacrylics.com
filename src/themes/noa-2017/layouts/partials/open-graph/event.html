@@ -3,7 +3,7 @@
 <meta property="og:type" content="website" />
 <meta property="og:url" content="{{ .Permalink }}" />
 {{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
-{{ range $painting }}<meta property="og:image" content="{{ printf "/assets/img/paintings/%s" .Params.file | absURL	}}" />{{ end }}
+{{ range $painting }}<meta property="og:image" content="{{ printf "/assets/img/paintings/%s" .Params.lowresfile | absURL	}}" />{{ end }}
 {{ if .IsPage }}
 {{ range .Site.Authors }}{{ with .Social.facebook }}
 <meta property="article:author" content="https://www.facebook.com/{{ . }}" />{{ end }}{{ with .Site.Social.facebook }}
