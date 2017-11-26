@@ -10,7 +10,7 @@ canonifyurls = true
 paginate = 3
 
 [params]
-description = ""
+description = "Night Of Acrylics is injecting a booster shot of fun into your paint party experience. Join us at your local restaurant or bar for painting, music, food and drinks."
 tagline = "Have fun, Paint fun."
 mailchimpURL = "//NightOfAcrylics.us16.list-manage.com/subscribe/post?u=146e75a1066df1e45e94aa5be&amp;id=2746dc535d"
 facebook   = "https://facebook.com/NightOfAcrylics"
