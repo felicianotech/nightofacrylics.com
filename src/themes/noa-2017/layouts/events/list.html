@@ -6,7 +6,7 @@
 	{{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
 		<div class="content-item event">
 		{{ range $painting }}
-			<img class="painting" src="/assets/img/paintings/{{ .Params.file }}" alt="The painting" />
+			<img class="painting" src="/assets/img/paintings/{{ .Params.lowresfile }}" alt="The painting" />
 			<h2>{{ .Title }}</h2>
 		{{ end }}
 			<ul>
