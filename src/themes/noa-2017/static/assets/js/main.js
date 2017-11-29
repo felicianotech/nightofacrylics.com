@@ -47,6 +47,17 @@ $(document).ready(function(){
 	$( ".ticket-number" ).change( function( event ){
 		checkout2( $( ".buy-button" ).attr( "data-product-id" ) );
 	});
+
+	// block events that have expired since the site was last generated from being sold
+	if( $( ".buy-button" ) ){
+
+		var now = new Date();
+		var ticketDeadline = eventDate + (5 * 60 * 1000);
+
+		if( ticketDeadline < now){
+			$( ".buy-button-wrapper" ).text( "Tickets are no longer available." );
+		}
+	}
 });
 
 // globals

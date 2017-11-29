@@ -2,6 +2,9 @@
 {{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
 {{ $venue := where (where $.Site.Pages "Section" "venues") "Params.venueid" .Params.venueid }}
 <main class="single">
+	<script type="text/JavaScript">
+		var eventDate = Date.parse("{{ .Params.eventdate }}");
+	</script>
 	<h1>{{ .Title }}</h1>
 	{{ range $painting }}
 	<img class="painting" src="/assets/img/paintings/{{ .Params.lowresfile }}" alt="The painting" />
