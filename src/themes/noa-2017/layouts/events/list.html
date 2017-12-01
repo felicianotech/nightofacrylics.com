@@ -2,22 +2,24 @@
 <main class="list">
 	<h1>{{ .Title }}</h1>
 	{{ range sort .Data.Pages ".Params.eventdate" }}
-	{{ $venue := where (where $.Site.Pages "Section" "venues") "Params.venueid" .Params.venueid }}
-	{{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
-		<div class="content-item event">
-		{{ range $painting }}
-			<img class="painting" src="/assets/img/paintings/{{ .Params.lowresfile }}" alt="The painting" />
-			<h2>{{ .Title }}</h2>
+	{{ if ge (time .Params.eventdate ) now }}
+		{{ $venue := where (where $.Site.Pages "Section" "venues") "Params.venueid" .Params.venueid }}
+		{{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
+			<div class="content-item event">
+			{{ range $painting }}
+				<img class="painting" src="/assets/img/paintings/{{ .Params.lowresfile }}" alt="The painting" />
+				<h2>{{ .Title }}</h2>
+			{{ end }}
+				<ul>
+					<li><strong>Date:</strong> {{ dateFormat "Mon, January 2, 2006" .Params.eventdate }}</li>
+					{{ range $venue }}
+					<li><strong>Venue:</strong> {{ .Params.title  }}</li>
+					<li><strong>Address:</strong><br />{{ .Params.address  }}</li>
+					{{ end }}
+				</ul>
+				<a class="button" href="{{ .Permalink  }}">More Information</a>
+			</div>
 		{{ end }}
-			<ul>
-				<li><strong>Date:</strong> {{ dateFormat "Mon, January 2, 2006" .Params.eventdate }}</li>
-				{{ range $venue }}
-				<li><strong>Venue:</strong> {{ .Params.title  }}</li>
-				<li><strong>Address:</strong><br />{{ .Params.address  }}</li>
-				{{ end }}
-			</ul>
-			<a class="button" href="{{ .Permalink  }}">More Information</a>
-		</div>
 	{{ end }}
 </main>
 {{ end }}
