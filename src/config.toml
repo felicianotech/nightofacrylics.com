@@ -23,6 +23,17 @@ instagram  = "https://instagram.com/NightOfAcrylics"
 [blackfriday]
 	hrefTargetBlank	=	true
 
+[outputs]
+page = ["HTML", "poster"]
+
+[outputFormats]
+[outputFormats.poster]
+name       = "poster"
+mediaType  = "text/html"
+baseName   = "poster"
+isHTML     = true
+
+
 [[menu.main]]
 	name	= "Home"
 	url		= "/"
