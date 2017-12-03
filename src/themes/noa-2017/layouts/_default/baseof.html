@@ -1,3 +1,12 @@
+{{ $alts := .AlternativeOutputFormats }}
+{{ range .OutputFormats }}
+	{{ $item := .Name }}
+	{{ range $alts }}
+		{{ if ne .Name $item }}
+			{{ $.Scratch.Set "curOutputFormat" $item }}
+		{{ end }}
+	{{ end }}
+{{ end }}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -15,7 +24,7 @@
 	{{ partial "twitter-card" . }}
 	{{ partial "head-verifications" . }}
 </head>
-<body class="{{ if .IsHome }}home {{ end }}{{ if .Section }}section-{{ .Section }}{{ end }}">
+<body class="{{ if .IsHome }}home {{ end }}{{ if .Section }}section-{{ .Section }}{{ end }} outputformat-{{ $.Scratch.Get "curOutputFormat" }}">
 	{{ partial "header" . }}
 	{{ block "main" . }}{{ end }}
 	{{ if not .IsHome }}{{ partial "footer" . }}{{ end }}
