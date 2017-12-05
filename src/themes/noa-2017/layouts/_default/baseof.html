@@ -1,10 +1,12 @@
 {{ $alts := .AlternativeOutputFormats }}
 {{ range .OutputFormats }}
+	{{ $.Scratch.Set "tempFound" false }}
 	{{ $item := .Name }}
 	{{ range $alts }}
-		{{ if ne .Name $item }}
-			{{ $.Scratch.Set "curOutputFormat" $item }}
-		{{ end }}
+		{{ if eq $item .Name }}{{ $.Scratch.Set "tempFound" true }}{{ end }}
+	{{ end }}
+	{{ if not ($.Scratch.Get "tempFound") }}
+		{{ $.Scratch.Set "curOutputFormat" $item }}
 	{{ end }}
 {{ end }}
 <!DOCTYPE html>
@@ -29,5 +31,10 @@
 	{{ block "main" . }}{{ end }}
 	{{ if not .IsHome }}{{ partial "footer" . }}{{ end }}
 	{{ partial "footer-js" . }}
+{{ range .AlternativeOutputFormats }}
+<p>
+{{ printf "%#v" . }}
+</p>
+{{ end }}
 </body>
 </html>

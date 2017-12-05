@@ -24,13 +24,18 @@ instagram  = "https://instagram.com/NightOfAcrylics"
 	hrefTargetBlank	=	true
 
 [outputs]
-page = ["HTML", "poster"]
+page = ["HTML", "poster", "ig"]
 
 [outputFormats]
 [outputFormats.poster]
 name       = "poster"
 mediaType  = "text/html"
 baseName   = "poster"
+isHTML     = true
+[outputFormats.ig]
+name       = "ig"
+mediaType  = "text/html"
+baseName   = "ig"
 isHTML     = true
 
 
