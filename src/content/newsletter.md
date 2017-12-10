@@ -1,4 +1,5 @@
 ---
 title: "Join Our Newsletter"
-type: newsletter
+type: "newsletter"
+signupform:  "default"
 ---
