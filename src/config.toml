@@ -40,11 +40,16 @@ isHTML     = true
 	weight	= -1
 
 [[menu.main]]
-	name	= "Events"
-	url		= "/events"
+	name	= "Public Events"
+	url		= "/events/"
 	weight	= 5
 
 [[menu.main]]
 	name	= "Newsletter"
-	url		= "/newsletter"
+	url		= "/newsletter/"
 	weight	= 10
+
+[[menu.main]]
+	name	= "Private Events"
+	url		= "/private-events/"
+	weight	= 15
