@@ -2,7 +2,7 @@
 <main class="list">
 	<h1>{{ .Title }}</h1>
 	{{ $.Scratch.Set "events-empty" true }}
-	{{ range sort .Data.Pages ".Params.eventdate" }}
+	{{ range sort (where .Data.Pages ".Params.etype" "public") ".Params.eventdate" }}
 	{{ if ge (time .Params.eventdate ) now }}
 		{{ $venue := where (where $.Site.Pages "Section" "venues") "Params.venueid" .Params.venueid }}
 		{{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
