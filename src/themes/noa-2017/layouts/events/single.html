@@ -1,4 +1,9 @@
 {{ define "main" }}
+{{ if lt .Params.capacity 10 }}
+	{{ $.Scratch.Set "ticket-dropdown" .Params.capacity }}
+{{ else }}
+	{{ $.Scratch.Set "ticket-dropdown" 10 }}
+{{ end }}
 {{ $painting := where (where $.Site.Pages "Section" "paintings") "Params.paintingid" .Params.paintingid }}
 {{ $venue := where (where $.Site.Pages "Section" "venues") "Params.venueid" .Params.venueid }}
 <main class="single">
@@ -23,8 +28,10 @@
 		<p class="buy-button-wrapper">
 			<select class="ticket-number">
 				<option value="1" default>1 ticket</option>
-			{{ range $index := after 1 (seq 10) }}
-				<option value="{{ $index }}">{{ $index }} tickets</option>
+			{{ if gt ($.Scratch.Get "ticket-dropdown") 1 }}
+				{{ range $index := after 1 (seq ($.Scratch.Get "ticket-dropdown")) }}
+					<option value="{{ $index }}">{{ $index }} tickets</option>
+				{{ end }}
 			{{ end }}
 			</select>
 			<a class="buy-button button" data-product-id="{{ .Params.productid }}" href="#" target="_blank">Purchase Tickets</a>
